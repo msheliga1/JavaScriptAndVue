@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+/* CSS style file for scorp project. MJS 7.29.18 */
+/* use . for classes, pounds for ids and tag names for all tags */
+/* Dont use <style> as it will mess up your first element. */
+.highlight {
+	background: yellow;
+}
+.redBorder {
+	border-style: solid;
+	border-color: red;
+}
+.orangeBorder {
+	border-style: solid;
+	border-color: orange;
+}
+p.indent { 
+	padding-left: 1.8em;
+}
+span.indent { 
+	padding-left: 1.8em;
+}
+.indent { 
+	padding-left: 1.8em;
+}
