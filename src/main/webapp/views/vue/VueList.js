@@ -1,4 +1,4 @@
-var model = {coalCompany : 'R&P',
+let model = {coalCompany : 'R&P',
 		count : 1, 
 		editMode : true,
 		addTownClass : "",  // set to highlight on error
@@ -11,7 +11,7 @@ var model = {coalCompany : 'R&P',
 		data: model,  // separate model out of view-model
 		methods: {
 			addTown : function() {
-				if (this.newTown.trim().length == 0) {
+				if (this.newTown.trim().length === 0) {
 					alert("You must input a name to add a town.")
 					this.addTownClass = "highlight"
 				}

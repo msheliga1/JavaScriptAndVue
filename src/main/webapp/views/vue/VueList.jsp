@@ -7,7 +7,7 @@ Mining towns can be added, deleted and edited.
 -->
 <head>
 <link rel="stylesheet" href="scorpStyles.css"></link>
-<title>Mike's webapp/vueList.jsp</title>
+<title>Mike's vueList.jsp</title>
 </head> 
 <!-- MJS 7.28.18 - Cant add vue id to body -->
 <body><div id="vue-app">

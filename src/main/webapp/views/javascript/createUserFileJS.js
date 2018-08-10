@@ -19,16 +19,16 @@ function createUserErrorCheck() {
 	const NEGATIVE_AGE = "The age can't be negative!";
 	const NEW_LINE = "\n";
 	const ERROR_POPUP_COLOR = "red";
-	var okay = true;  // main result returned by this method
-	var firstName;
-	var lastName;
-	var age; 
-	var highlight = document.getElementById("highlight");
-	var nextNode;
-	var appendText;
-	var errorCount = 0;
-	var errorMsg = "";
-	var defaultBackground = 'white';
+	let okay = true;  // main result returned by this method
+	let firstName;
+	let lastName;
+	let age; 
+	let highlight = document.getElementById("highlight");
+	let nextNode;
+	let appendText;
+	let errorCount = 0;
+	let errorMsg = "";
+	let defaultBackground = 'white';
 	
 	// displayElementsAndNames();
 	// Handle the firstName input field
@@ -39,10 +39,10 @@ function createUserErrorCheck() {
 		nextNode.parentNode.removeChild(nextNode);
 	}
 	// Check new firstName, display alert and insert msg on web page.
-	if (firstName.value.length == 0) {
+	if (firstName.value.length === 0) {
 		errorMsg += ++errorCount + ". " + BLANK_FIRSTNAME + NEW_LINE;
 		firstName.style.backgroundColor = highlight.value;
-		var label = document.createElement('label');
+		let label = document.createElement('label');
 		label.textContent = BLANK_FIRSTNAME;
 		label.style.backgroundColor = ERROR_POPUP_COLOR;
 		firstName.insertAdjacentElement("afterEnd", label);
@@ -54,7 +54,7 @@ function createUserErrorCheck() {
 	// Handle the lastName input field  
 	// Note how making the error msg invisible requires less code.
 	lastName = document.getElementById("lastName");
-	if (lastName.value.length == 0) {
+	if (lastName.value.length === 0) {
 		errorMsg += ++errorCount + ". " + BLANK_LASTNAME + NEW_LINE;
 		lastName.style.backgroundColor = highlight.value;
 		document.getElementById("lastNameErrorMsg").style.visibility = "visible";
@@ -68,9 +68,9 @@ function createUserErrorCheck() {
 	// Handle the age field.  
 	// First delete the old age err msg, if it exists, by looping through 
 	// all child nodes.  This code is the longest.
-	var ageCNs = document.getElementById("ageBreak").childNodes;
-	for (var i=0; i < ageCNs.length; i++) {
-		var curNode = ageCNs[i];
+	let ageCNs = document.getElementById("ageBreak").childNodes;
+	for (let i=0; i < ageCNs.length; i++) {
+		let curNode = ageCNs[i];
 		if (curNode.nodeType === Node.TEXT_NODE || 
 			curNode.nodeType === Node.ELEMENT_NODE) {
 			if (curNode.textContent === BLANK_AGE ||
@@ -81,7 +81,7 @@ function createUserErrorCheck() {
 	}
 	// Now check the age field, display alert and insert err text on web page.
 	age = document.getElementById("age");
-	if (age.value.length == 0) {
+	if (age.value.length === 0) {
 		// cant easily change pass-by-value parameters in routine so change errorMsg here
 		errorMsg += ++errorCount + ". " + BLANK_AGE + NEW_LINE;
 		addAgeErrorInfo(age, BLANK_AGE);
@@ -94,7 +94,7 @@ function createUserErrorCheck() {
 		age.style.backgroundColor = defaultBackground;
 	}
 	if (errorCount > 0) {
-		var msg = "The data contains " + errorCount + " error";
+		let msg = "The data contains " + errorCount + " error";
 		if (errorCount > 1) msg += "s";
 		msg += " that must be corrected. " + NEW_LINE + NEW_LINE;
 		alert(msg + errorMsg);		
@@ -106,11 +106,11 @@ function createUserErrorCheck() {
 // MJS 7.19.18 - Add error highlight and label for age field
 // errorCount must be incremented before this routine
 function addAgeErrorInfo(age, newMsg) {
-	var highlight = document.getElementById("highlight");
+	let highlight = document.getElementById("highlight");
 	 
 	// insert age err text on web page.
 	age.style.backgroundColor = highlight.value;
-	var label = document.createElement('label');
+	let label = document.createElement('label');
 	label.textContent = newMsg;
 	label.style.backgroundColor = 'red';
 	document.getElementById("ageBreak").appendChild(label); 
@@ -121,14 +121,14 @@ function addAgeErrorInfo(age, newMsg) {
 function displayElementsAndNames() {
 	
 	// elements are NOT text nodes. There are 12 types of nodes, elements have <>'s normally
-	var els = document.getElementById("createUserJSForm").elements;
-	for (var i=0; i < els.length; i++) {
+	let els = document.getElementById("createUserJSForm").elements;
+	for (let i=0; i < els.length; i++) {
 		alert("Elements " + i + " is " + els[i].value);
-		var curNode = els[i];
+		let curNode = els[i];
 	}
-	var cns = document.getElementById("names").childNodes;
-	for (var i=0; i < cns.length; i++) {
-		var curNode = cns[i];
+	let cns = document.getElementById("names").childNodes;
+	for (let i=0; i < cns.length; i++) {
+		let curNode = cns[i];
 		if (curNode.nodeType === Node.TEXT_NODE) {
 			alert("ChildNode " + i + " is a text node: " + curNode.textContent);
 		} else {

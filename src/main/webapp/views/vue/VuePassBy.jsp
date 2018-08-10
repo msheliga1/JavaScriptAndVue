@@ -49,7 +49,7 @@ accepted by a text box. -->
     <br><span class="indent"> msg4=msgObj4.value, </span>
     <br><span class="indent"> msgClass4=msgObj4.clazz"</span>
 </div>
-<!-- Whether the javascript is in a separate file or included in this file, new Vue must 
+<!-- Whether the javascript is in a separate file or included in this file, new Vue must be
  after the code using it. 3 uncaught in promise errs solved by disabling Selenium extension. -->
 <script src="VuePassBy.js"></script>
 </body>

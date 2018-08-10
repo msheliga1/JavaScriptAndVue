@@ -22,7 +22,7 @@ var vm = new Vue({
 				// alert("Only " + this.limit + " characters allowed in text box.")
 				this.msg = this.msg.substring(0, this.limit)  // [start,end)
 				this.msgClass = "redBorder"
-			} else if (this.msg.length == this.limit) {
+			} else if (this.msg.length === this.limit) {
 				this.msgClass = "orangeBorder"
 			} else {
 				this.msgClass = ""	
@@ -31,12 +31,12 @@ var vm = new Vue({
 		// Here pass by reference works using textLimit2(msgObject)...as long as the primitives are extracted 
 		// by the caller using msgObject.value and msgObject.class
 		textLimit2: function(msgObj) {
-			var msg = msgObj.value
+			let msg = msgObj.value
 			if (msg.length > this.limit) {
 				msgObj.value = msg.substring(0, this.limit)  // [start,end)
 				msgObj.clazz = "redBorder"
-				alert("Orig value " + msg + " updated value. " + msgObj.value)
-			} else if (msg.length == this.limit) {
+				// alert("Orig value " + msg + " updated value. " + msgObj.value)
+			} else if (msg.length === this.limit) {
 				msgObj.clazz = "orangeBorder"
 			} else {
 				msgObj.clazz = ""	
@@ -45,17 +45,17 @@ var vm = new Vue({
 		// Here pass by reference can work, but will not work using: textLimit3({value: primitiveVar})... 
 		// cant get changed value to return and change the primitive. 
 		textLimit3: function(msgObjx) {
-			var msg = msgObjx.value
+			let msg = msgObjx.value
 			if (msgObjx.value.length > this.limit) {
 				msgObjx.value = msgObjx.value.substring(0, this.limit)  // [start,end)
 				this.msgClass3 = "redBorder"
-				alert("Orig value " + msg + " updated value. " + msgObjx.value)
-			} else if (msgObjx.value.length == this.limit) {
+				// alert("Orig value " + msg + " updated value. " + msgObjx.value)
+			} else if (msgObjx.value.length === this.limit) {
 				this.msgClass3 = "orangeBorder"
 			} else {
 				this.msgClass3 = ""	
 			} // end if-else
 		} // textLimit3
 	} // methods
-})
+}) 
 

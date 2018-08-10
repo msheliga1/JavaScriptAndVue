@@ -88,11 +88,11 @@ Vue.component('number-input', {
 	data: function() {
 		return {count: 0, 
 				msg: "Component Msg",
-				amount: this.defaultProp, // amount and default should both be numbers - MJS 8.5.18
+				// amount: this.defaultProp, // amount and defaultVal should both be numbers - MJS 8.5.18
 				// this does NOT change when item.def changes, even if bound to it. Use a prop instead.
 				defaultVal: this.defaultProp,  
 		}
-	},
+	}, // end data
 	created() {  // set amount to default, and emit it so parent has updated amount
 		this.amount = this.defaultProp
 		this.$emit('relay', this.amount)
@@ -105,6 +105,7 @@ Vue.component('number-input', {
 			type: Number,
 			validator: function(value) {return value>=0}
 		},
+		amount: Number, // Moved from data so it auto-updates on delete. 8.10.18 MJS
 		negate: Boolean,
 		debugMode: Boolean,
 	},
